@@ -1,0 +1,30 @@
+version: '3'
+
+dotenv: ['.env']
+
+tasks:
+  format:
+    cmds:
+      - gofmt -w .
+
+  build:
+    cmds:
+      - go build .
+
+  docker:
+    cmds:
+      - docker build . -t socialbot:latest --target run
+
+  docker-run:
+    cmds:
+      - task: docker
+      - docker run --publish 8080:8080 --mount type=bind,source=${PWD}/.env,target=/.env --network=host --env AWS_ACCESS_KEY_ID --env AWS_SECRET_ACCESS_KEY --env AWS_REGION socialbot:latest
+
+  clean:
+    cmds:
+      - rm -rf socialbot
+
+  lint:
+    cmds:
+      - staticcheck ./...
+      - go vet ./...

@@ -5,6 +5,10 @@
 
 TrueMedia.org's interactive bot for Twitter/X, which is extensible to other social platforms. It watches for mentions in responses to Tweets with media, submits that media for deepfake analysis, and replies to that mention with the results.
 
+This social media bot was developed by [TrueMedia.org](https://www.truemedia.org/), a non-profit service that detects deepfakes in social media.
+
+[![TrueMedia.org video](https://raw.githubusercontent.com/truemediaorg/.github/main/profile/video-splash.png)](https://www.youtube.com/watch?v=-6l7Jg02C8E)
+
 ## Initial setup
 
 When setting up this project for the first time, you'll need to search the code for `OPEN-TODO-PLACEHOLDER` and replace with your specific service information.
